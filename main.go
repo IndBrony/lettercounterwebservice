@@ -22,7 +22,7 @@ func handler(writer http.ResponseWriter, request *http.Request) {
 	request.ParseForm()
 
 	text := request.Form.Get("text")
-	vocals, consonants := lettercounter.NumberOfVocalsAndConsonants(text)
+	vocals, consonants := lettercounter.NumberOfVocalsAndConsonantsConcurrent(text)
 
 	response := response{
 		Vocals:     vocals,
